@@ -21,6 +21,13 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+
+  video: true,  // Ensuring here that video recording is enabled
+  videoUploadOnPasses: true,  // To save videos even when all tests pass
+  videoCompression: false, 
+  screenshotsFolder: "cypress/screenshots", 
+  videosFolder: "cypress/videos",
+  
   e2e: {
     specPattern: "cypress/tests/feature/shopping.feature",
     setupNodeEvents,
